@@ -1,84 +1,34 @@
 export default function Stories() {
+
+    let stories = [{perfil: "9gag",foto: "assets/img/9gag.svg"},
+                    {perfil: "meowed",foto: "assets/img/meowed.svg"},
+                    {perfil: "barked",foto: "assets/img/barked.svg"},
+                    {perfil: "nathanwpylestrangeplanet",foto: "assets/img/nathanwpylestrangeplanet.svg"},
+                    {perfil: "wawawicomics",foto: "assets/img/wawawicomics.svg"},
+                    {perfil: "respondeai",foto: "assets/img/respondeai.svg" },
+                    {perfil: "filomoderna",foto: "assets/img/filomoderna.svg"},
+                    {perfil: "memeriagourmet",foto: "assets/img/memeriagourmet.svg"},]
+
     return (
         <div class="stories">
-        <div class="story">
-          <div class="imagem">
-            <img src="assets/img/9gag.svg" />
-          </div>
-          <div class="usuario">
-            9gag
-          </div>
-        </div>
+            {stories.map((f) => <GeraStories perfil={f.perfil} foto={f.foto} />)}
 
-        <div class="story">
-          <div class="imagem">
-            <img src="assets/img/meowed.svg" />
-          </div>
-          <div class="usuario">
-            meowed
-          </div>
+            <div class="setinha">
+                <ion-icon name="chevron-forward-circle"></ion-icon>
+            </div>
         </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="assets/img/barked.svg" />
-          </div>
-          <div class="usuario">
-            barked
-          </div>
-        </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="assets/img/nathanwpylestrangeplanet.svg" />
-          </div>
-          <div class="usuario">
-            nathanwpylestrangeplanet
-          </div>
-        </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="assets/img/wawawicomics.svg" />
-          </div>
-          <div class="usuario">
-            wawawicomics
-          </div>
-        </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="assets/img/respondeai.svg" />
-          </div>
-          <div class="usuario">
-            respondeai
-          </div>
-        </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="assets/img/filomoderna.svg" />
-          </div>
-          <div class="usuario">
-            filomoderna
-          </div>
-        </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="assets/img/memeriagourmet.svg" />
-          </div>
-          <div class="usuario">
-            memeriagourmet
-          </div>
-        </div>
-
-        <div class="setinha">
-          <ion-icon name="chevron-forward-circle"></ion-icon>
-        </div>
-      </div>
-
     );
   }
-  
-//Stories (onde cada item será um componente diferente, o Story)
+
+function GeraStories(props){
+    return(
+        <div class="story">
+          <div class="imagem">
+            <img src={props.foto} />
+          </div>
+          <div class="usuario">
+            {props.perfil}
+          </div>
+        </div>
+    )
+}

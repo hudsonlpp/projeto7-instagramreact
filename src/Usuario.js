@@ -1,14 +1,17 @@
 export default function Usuario() {
+
+    let usuario = {foto:"assets/img/catanacomics.svg", perfil: "Catana"}
+
     return (
-        <div class="usuario">
-          <img src="assets/img/catanacomics.svg" />
-          <div class="texto">
-            <strong>catanacomics</strong>
-            <span>
-              Catana
-              <ion-icon name="pencil"></ion-icon>
-            </span>
-          </div>
-        </div>    
+            <div class="usuario">
+              <img src={usuario.foto} />
+              <div class="texto">
+                <strong>catanacomics</strong>
+                <span>
+                  {usuario.perfil}
+                  <ion-icon name="pencil"></ion-icon>
+                </span>
+              </div>
+            </div>    
     );
   }
