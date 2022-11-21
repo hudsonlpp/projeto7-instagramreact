@@ -18,7 +18,7 @@ export default function Posts() {
     const[umLike,setUmLike] = React.useState(props.likes)
 
     return(
-        <div class="post">
+        <div data-test="post" class="post">
           <div class="topo">
             <div class="usuario">
               <img src={props.foto} />
@@ -30,24 +30,24 @@ export default function Posts() {
           </div>
 
           <div class="conteudo">
-            <img onDoubleClick={CurteImagem} src={props.conteudo} />
+            <img data-test="post-image" onDoubleClick={CurteImagem} src={props.conteudo} />
           </div>
 
           <div class="fundo">
             <div class="acoes">
               <div>
-                <ion-icon onClick={Curtida} name={curtir}></ion-icon>
+                <ion-icon data-test="like-post" onClick={Curtida} name={curtir}></ion-icon>
                 <ion-icon name="chatbubble-outline"></ion-icon>
                 <ion-icon name="paper-plane-outline"></ion-icon>
               </div>
               <div>
-                <ion-icon onClick={Salvada} name={salvar}></ion-icon>
+                <ion-icon data-test="save-post" onClick={Salvada} name={salvar}></ion-icon>
               </div>
             </div>
 
             <div class="curtidas">
               <img src="assets/img/respondeai.svg" />
-              <div class="texto">
+              <div data-test="likes-number" class="texto">
               Curtido por <strong>{props.like}</strong> e <strong> outras {umLike} pessoas</strong>.
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function Posts() {
             setUmLike(props.likes + 1)
         } else {
             setCurtir("heart-outline")
-            setUmLike(props.likes - 1)
+            setUmLike(props.likes)
         }
     }
 

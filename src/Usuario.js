@@ -20,13 +20,13 @@ export default function Usuario() {
 
     function GeraUsuario(props){
         return (
-            <div class="usuario">
-              <img onClick={inserirFoto} src={!foto ? "assets/img/catanacomics.svg" : foto} />
+            <div data-test="user" class="usuario">
+              <img data-test="profile-image" onClick={inserirFoto} src={!foto ? "assets/img/catanacomics.svg" : foto} />
               <div class="texto">
                 <strong>catanacomics</strong>
-                <span>
+                <span data-test="name">
                 {!perfil ? "Catana" : perfil}
-                  <ion-icon onClick={inserirPerfil} name="pencil"></ion-icon>
+                  <ion-icon data-test="edit-name" onClick={inserirPerfil} name="pencil"></ion-icon>
                 </span>
               </div>
             </div>    
